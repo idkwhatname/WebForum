@@ -1,9 +1,22 @@
 <html>
     <style>
+        body{
+            background-color: #7FDBFF;
+        }
         .container{
             display: grid | inline-grid;
             grid-template-columns: 10% 30% auto 30% 10%;
             grid-template-rows: 25% auto 25%;
+        }
+        .Banner{
+            width: 100%;
+            height: 10%;
+        }
+        .BannerText{
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         
         .TopBar{
@@ -11,24 +24,66 @@
             grid-column-end: 5;
             grid-row-start: row1-start;
             grid-row-end: 3;
-            font-size: 60px;
+            font-size: 30px;
             text-align: center;
+        }
+        .ArticleSection{
+            grid-row-start: 2;
+            grid-row-end: end;
+        }
+        
+        .Article{
+            
+            
         }
     
     </style>
     
-    <head>
-    
-    </head>
-    
-    
-    
-    
+    <title>
+    Forum
+    </title>
+      
     <body>
         <div class="container">
+            <img class="Banner" src="img/Banner.png">
+            <div class="BannerText">
+                <h1>
+                    Web Forum
+                </h1>
+            </div>
+            
             <div class="TopBar">
                 Following: Jonny Depp, Puppies
         
+            </div>
+            
+            
+            <div class="ArticleSection">
+                <article class="Article">
+                    <h4>Title</h4>
+                    Description - - -- - - - - -- - - - - - -
+                </article>
+                 <article class="Article">
+                    <h4>Title</h4>
+                    Description - - -- - - - - -- - - - - - -
+                </article>
+                 <article class="Article">
+                    <h4>Title</h4>
+                    Description - - -- - - - - -- - - - - - -
+                </article>
+                 <article class="Article">
+                    <h4>Title</h4>
+                    Description - - -- - - - - -- - - - - - -
+                </article>
+                 <article class="Article">
+                    <h4>Title</h4>
+                    Description - - -- - - - - -- - - - - - -
+                </article>
+                 <article class="Article">
+                    <h4>Title</h4>
+                    Description - - -- - - - - -- - - - - - -
+                </article>
+                
             </div>
         </div>
         
