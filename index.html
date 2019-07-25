@@ -27,7 +27,11 @@
             width: 70%;
             transform: translate(-50%, -50%);
         }
-        
+        .Login{
+            position: sticky;
+            float: right; 
+            border: 2px solid #000000;
+        }
         .TopBar{
             grid-column-start: 2;
             grid-column-end: 5;
@@ -43,7 +47,23 @@
         
         .Article{
             background-color: azure;
+            border-radius: 6px;
+            box-shadow: 0px 6px gray;
             
+        }
+        .Article:hover{
+            position: relative; 
+            top: -5px;
+            box-shadow: 0px 12px gray;
+        }
+        
+        .ArticlePeekImg{
+            float: left;
+            width: 50px;
+            height: 50px;
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-left: 5px;
         }
         
         /* Tooltip container */
@@ -87,10 +107,10 @@
         </fig>
 
         <div class="SearchBar">
-            <input style="border: 2px solid #09b3ff;border-radius: 5px;width: 50%; padding: 5; display:inline-block;" type="text" placeholder="SEARCH">
+            <input  style="border: 2px solid #09b3ff;border-radius: 5px;width: 50%; padding: 5; display:inline-block;" type="text" placeholder="SEARCH">
         </div>
 
-        <div style="float: right; border: 2px solid #000000">
+        <div class="Login">
             <div>
                 <input type="text" placeholder="Login" style="margin: 3;">
             </div>
@@ -100,8 +120,7 @@
             <div style="float: right;"> 
                 <button> Login </button>
                 <button> SignUp</button>
-
-            </div>
+            </div>  
             
         </div>
             <img class="Banner" src="img/Banner.png">
@@ -111,34 +130,37 @@
                 </h1>
             </div>
                 <div class="TopBar">
-                    Following: Jonny Depp, Puppies
+                    Popular Posts
 
             </div>
             <div class="ArticleSection">
                     <article class="Article">
+                        <img class="ArticlePeekImg" src="img/placeholder.jpg">
                         <h4>Title</h4>
                         Description - - -- - - - - -- - - - - - -
                     </article>
-                     <article class="Article">
+                    <article class="Article">
+                        <img class="ArticlePeekImg" src="img/placeholder.jpg">
                         <h4>Title</h4>
                         Description - - -- - - - - -- - - - - - -
                     </article>
-                     <article class="Article">
+                    <article class="Article">
+                        <img class="ArticlePeekImg" src="img/placeholder.jpg">
                         <h4>Title</h4>
                         Description - - -- - - - - -- - - - - - -
                     </article>
-                     <article class="Article">
+                    <article class="Article">
+                        <img class="ArticlePeekImg" src="img/placeholder.jpg">
                         <h4>Title</h4>
                         Description - - -- - - - - -- - - - - - -
                     </article>
-                     <article class="Article">
+                    <article class="Article">
+                        <img class="ArticlePeekImg" src="img/placeholder.jpg">
                         <h4>Title</h4>
                         Description - - -- - - - - -- - - - - - -
                     </article>
-                     <article class="Article">
-                        <h4>Title</h4>
-                        Description - - -- - - - - -- - - - - - -
-                    </article>
+                
+                   
                 </div>
             </div> 
     </body>
