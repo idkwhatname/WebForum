@@ -4,7 +4,8 @@
     <!–– Css -->
     <link rel = "stylesheet"
           type = 'text/css'
-          href = "style.css" />
+          href = "style.css" 
+    />
     
     <title>
     Forum
@@ -55,20 +56,25 @@
     
     $res = $m->executeQuery("forum.articles", $query);
     
-    $r = $res->toArray();
-              
+    $r = $res->toArray();          
 ?>        
             <div class="ArticleSection">
-                <?php 
+                <?php
+
                     foreach($r as $a){
-                        echo "<article class='Article'>
+                        $article = <<<HTML
+                            <article class='Article'>
                             <img class='ArticlePeekImg' src='img/placeholder.jpg'>
                             <h4>
                                $a->title
                             </h4>
                                $a->description
-                               <div
-                            </article>";
+                            <div class='ArticleLikeCount'>
+                                $a->likes
+                            </div>
+                            </article>
+                        HTML;
+                        echo $article;
                     }
                 ?>
             </div>
