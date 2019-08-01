@@ -139,10 +139,10 @@
                 document.getElementById("cancel").addEventListener("click", function() {
                     if (title.value.length > 0 || desc.value.length > 0 || tags.value.length > 0 || file.value.length > 0) {
                         if (confirm("Are you sure you want to cancel?")) {
-                            history.back();
+                            showHideUpload()
                         }
                     } else {
-                        history.back();
+                        showHideUpload()
                     }
                 });
                 /*------------------------------------------Cancel------------------------------------------*/
