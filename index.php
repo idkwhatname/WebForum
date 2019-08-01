@@ -32,8 +32,26 @@
 
         usort($r, 'compare');
     }
-?>
+    
+    #POSTING STUFF
+    if(isset($_GET["title"]) && isset($_GET["desc"]) && isset($_GET["tags"]) && isset($_GET["img"])){
 
+        $bulk = new MongoDB\Driver\BulkWrite;
+        $b64 = str_replace(" ", "+", $_GET["img"]);
+        $doc = [
+            '_id' => new MongoDB\BSON\ObjectID, 
+            'title' => $_GET["title"],
+            'description' => $_GET["desc"], 
+            'likes' => 1, 
+            'tags' => $_GET["tags"], 
+            'img' => $b64
+            ];
+        $bulk->insert($doc);
+        $m->executeBulkWrite('forum.articles', $bulk);
+
+   }
+?>
+    
         <body>
 
             <div class="container">
@@ -88,13 +106,20 @@
                     foreach($r as $a){
                         $article = <<<HTML
                             <article class='Article'>
-                            <img class='ArticlePeekImg' src='img/placeholder.jpg'>
+                            <img class='ArticlePeekImg' src='$a->img'>
                             <h4>
                                $a->title
                             </h4>
+                            <div class='ArticleDescription'>
                                $a->description
+                            </div>
                             <div class='ArticleLikeCount'>
                                 $a->likes
+                            </div>
+                            <img class='ArticleHeart' src='img/heart.png'>
+                            <hr>
+                            <div class="ArticleTags">
+                                <b>Tags:</b> $a->tags
                             </div>
                             </article>
                         HTML;
@@ -179,12 +204,17 @@
                         if (confirm("Are you sure you want to post?")) {
                             document.getElementById("loading").classList.remove("hide");
                             sFile().then(function(post_file) {
+                                console.log(post_file);
                                 var post_title = title.value;
                                 var post_tags = tags.value;
                                 var post_desc = desc.value;
                                 //add to data base
                                 //bring you to new uploaded page
+                                setTimeout(function(){window.location.href = "index.php?title=" + post_title +"&tags=" + post_tags + "&desc=" + post_desc + "&img=" + post_file}, 500);
+                                
                             });
+                                setTimeout(HideLoading, 1600);
+                        
                         }
                     } else if (title.value.length > 0 && tags.value.length > 0 && file.value.length > 0) {
                         if (confirm("Are you sure you want to post?")) {
@@ -196,6 +226,7 @@
                                 //add to data base
                                 //bring you to new uploaded page
                             });
+                            document.getElementById("loading").classList.add("hide");
                         }
                     } else if (title.value.length > 0 && tags.value.length > 0 && desc.value.length > 0) {
                         if (confirm("Are you sure you want to post?")) {
@@ -205,6 +236,7 @@
                             var post_desc = desc.value;
                             //add to data base
                             //bring you to new uploaded page
+                            document.getElementById("loading").classList.add("hide");
                         }
                     } else {
                         if (title.value.length == 0) {
@@ -228,7 +260,7 @@
                                 result(e.target.result)
                             })(f);
                         };
-
+                        
                         reader.readAsDataURL(document.getElementById("file").files[0]);
                     });
                     return await p;
@@ -237,6 +269,11 @@
                 /*-----------------------------------file loader function-----------------------------------*/
 
                 /*-------------------------------------------Post-------------------------------------------*/
+                
+                function HideLoading(){
+
+                     document.getElementById("loading").classList.add("hide");
+                }
 
                 function showHideUpload() {
                     var x = document.getElementById("Upload");
