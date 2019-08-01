@@ -132,7 +132,7 @@ body {
 .profile {
     width: 5em;
     margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0;
 }
 
 .upload {
@@ -156,7 +156,7 @@ body {
     height: 30px;
     border: 2px solid #09b3ff;
     border-radius: 5px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .simg {
@@ -229,7 +229,7 @@ body {
     /* Hidden by default */
     width: 50%;
     /* Full width (cover the whole page) */
-    height: 45%;
+    height: 56%;
     /* Full height (cover the whole page) */
     top: 20%;
     left: 0;
@@ -237,6 +237,7 @@ body {
     bottom: 0;
     background-color: #EFEFEF;
     border: 2px solid #09b3ff;
+    border-radius: 5px;
     /* Black background with opacity */
     z-index: 2;
     /* Specify a stack order in case you're using a different order for other elements */
@@ -352,4 +353,10 @@ body {
 
 .hide {
     display: none;
+}
+
+.upbutton {
+    background:none;
+    outline:none;
+    border:none;
 }

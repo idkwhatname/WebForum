@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html style=background:none;>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
 <style>
+    *{font-family: "Muli", sans-serif;}
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: black;
+  
+  background:none;
+    border: 2px solid #09b3ff; 
+                border-radius: 5px;
 }
 
 * {
@@ -14,7 +18,7 @@ body {
 
 .container {
   padding: 16px;
-  background-color: white;
+  background-color: #EFEFEF;
 }
 
 input[type=text], input[type=password] {
@@ -71,16 +75,20 @@ a {
     <hr>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="text" placeholder="Enter Email" name="email" required style="border: 2px solid #09b3ff; 
+                border-radius: 5px;">
       
     <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="email" required>
+    <input type="text" placeholder="Enter Username" name="email" required style="border: 2px solid #09b3ff; 
+                border-radius: 5px;">
            
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="psw" required style="border: 2px solid #09b3ff; 
+                border-radius: 5px;">
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required style="border: 2px solid #09b3ff; 
+                border-radius: 5px;">
     <hr>
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 

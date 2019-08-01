@@ -1,3 +1,4 @@
+
 <html>
 <!–– Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
@@ -63,13 +64,13 @@
                             <span class="tooltiptext">Home</span>
                         </fig>
 
-                        <fig class="tooltip" style="width: fit-content; display:inline-block;">
-                            <a href="http://google.com"><img class="profile" src="img/profile.jpg"></a>
+                        <fig class="tooltip" style="width: fit-content; display:inline-block;" id="profile1">
+                            <a href="#"><img class="profile" src="img/profile.jpg"></a>
                             <span class="tooltiptext">Profile</span>
                         </fig>
 
                         <fig class="tooltip" style="width: fit-content; display:inline-block;">
-                            <button onclick="showHideUpload()"><img class="upload" src="img/upload.png"></button>
+                            <button onclick="showHideUpload()" class="upbutton"><img class="upload" src="img/upload.png"></button>
                             <span class="tooltiptext">Create Post</span>
                         </fig>
                     </div>
@@ -85,8 +86,8 @@
 
                     <div class="loginbox">
                         <div class="lsbuttons">
-                            <button type="button" class="loginbutton">Login</button>
-                            <button type="button" class="signupbutton">Signup</button>
+                            <button type="button" class="loginbutton" id="login1">Login</button>
+                            <button type="button" class="signupbutton" id="signup1">Signup</button>
                         </div>
                     </div>
 
@@ -135,7 +136,16 @@
                 ?>
                 </div>
             </div>
-
+            
+            <!--profile-->
+            <div style="position:fixed; width: 50%; height:64%; top:2em; left:calc(50% - 200px); background:#EFEFEF;" class="hide" id="profilehide">
+                <iframe src="Profile Page.html" width="100%" height="800px" style="border:none;">
+                    
+                </iframe>
+            </div>
+            
+            
+            
             <!-- UPLOAD -->
             <div id="Upload" class="uploadall">
                 <div class="uploadWrapper">
@@ -170,6 +180,24 @@
                     </div>
                 </div>
             </div>
+            
+            <!---- login ---->
+            
+            <div style="position:fixed; width: 50%; height:61.15%; top:2em; left:calc(50% - 200px); background:none;" class="hide" id="loginhide">
+                <iframe src="Login Page.html" width="100%" height="100%" style="border:none;">
+                    
+                </iframe>
+            </div>
+            
+            <!---- signup ---->
+            
+            <div style="position:fixed; width: 50%; height:119%; top:0.5em; left:calc(50% - 200px); background:none;" class="hide" id="signuphide">
+                <iframe src="Signup Page.html" width="100%" height="119%" style="border:none;">
+                    
+                </iframe>
+            </div>
+            
+            
             <div class="loading hide" id="loading">
                 <img class="loading1" src="img/loadinggif.gif">
                 <img class="loading2" src="img/loadinggif2.gif">
@@ -179,6 +207,21 @@
             <!----------------------------------------java scripts---------------------------------------->
 
             <script>
+                /*-----------------------------------------hide----------------------------------------*/
+                document.getElementById("profile1").addEventListener("click",function(){
+                    document.getElementById("profilehide").classList.toggle("hide");
+                });
+                
+                document.getElementById("login1").addEventListener("click",function(){
+                    document.getElementById("loginhide").classList.toggle("hide");
+                });
+                
+                document.getElementById("signup1").addEventListener("click",function(){
+                    document.getElementById("signuphide").classList.toggle("hide");
+                });
+                    
+                /*-----------------------------------------hide----------------------------------------*/
+                    
                 /*-----------------------------------------variables----------------------------------------*/
                 var title = document.getElementById("title");
                 var tags = document.getElementById("tags");
