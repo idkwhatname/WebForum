@@ -1,0 +1,163 @@
+<html><head>
+        <link href="https://fonts.googleapis.com/css?family=Muli&amp;display=swap" rel="stylesheet">
+        <style>
+            *{font-family: "Muli", sans-serif;}
+            
+            .all{
+                border: 2px solid #09b3ff; 
+                width:100%;
+                display: inline-block;    
+                border-radius: 5px;
+            }
+            
+            .icons{
+                display: inline-block;
+            }
+            
+            .home{
+                width:5em; 
+                margin-top:0.5em;
+                margin-bottom: 0.5em;
+                margin-left: 0.5em;
+            }
+            
+            .profile{
+                width:5em;  
+                margin-top:0.5em;
+                margin-bottom: 0.5em;
+            }
+            
+            .upload{
+                width:5em; 
+                margin-top:0.5em;
+                margin-bottom: 0.5em;
+            }
+            
+            .searchbar{
+                display: inline-block; 
+                height: 84px;
+                position: center;
+                width: to-fit;
+            }
+            
+            .sbar{
+                width: 100%;
+                border: 2px solid #09b3ff;
+                border-radius: 5px;
+                margin-top: 31.5px;
+            }
+            
+            .simg{
+               width:20px;  
+            }
+            
+            .loginbox{
+                display: inline-block; 
+                float: right; 
+                border: 5px solid;
+                border-radius: 5px;
+                margin:0.5em;
+                width: 8em;
+                height: 80px;
+                border-image: linear-gradient(to top, #c70707 50%, #09b3ff 50%) 5;
+            }
+        
+            .lsbuttons{
+           
+            }
+            
+            .loginbutton{
+                border: none;
+                outline: 0;
+                display: inline-block;
+                padding: 8px;
+                color: white;
+                background-color: #09b3ff;
+                text-align: center;
+                cursor: pointer;
+                width: 100%;
+                font-size: 18px;
+                
+            }
+            
+            .signupbutton{
+                border: none;
+                outline: 0;
+                display: inline-block;
+                padding: 8px;
+                color: white;
+                background-color: #c70707;
+                text-align: center;
+                cursor: pointer;
+                width: 100%;
+                font-size: 18px;
+                
+            }
+            
+            /*-----------------------------------------tooltip----------------------------------------*/
+            .tooltip{
+                position: relative;
+                display: inline-block;
+            }
+            .tooltip .tooltiptext{
+                border: 1px solid #09b3ff;
+                visibility: hidden;
+                width: 120px;
+                background-color: white;
+                color: black;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                top: 20px;
+                left: 105%;
+                position: absolute;
+                z-index: 1;
+            }
+        
+            .tooltip:hover .tooltiptext{
+                visibility: visible;
+            }
+            /*-----------------------------------------tooltip----------------------------------------*/
+              
+        </style>
+    </head>
+    
+    <body>
+        <div class="all">
+               
+            <div class="icons">
+                <fig class="tooltip" style="width: fit-content; display:inline-block;">
+                    <a href="http://google.com"><img class="home" src="img/home.png"></a> 
+                    <span class="tooltiptext">Home</span>
+                </fig>
+                
+                <fig class="tooltip" style="width: fit-content; display:inline-block;">
+                    <a href="http://google.com"><img class="profile" src="img/profile.jpg"></a> 
+                    <span class="tooltiptext">Profile</span>
+                </fig>
+                
+                <fig class="tooltip" style="width: fit-content; display:inline-block;">
+                    <a href="http://google.com"><img class="upload" src="img/upload.png"></a> 
+                    <span class="tooltiptext">Upload</span>
+                </fig>
+            </div>
+
+            <div class="searchbar">
+                <input type="text" class="sbar" placeholder="Search..">
+                <fig class="tooltip" style="width: fit-content; display:inline-block;">
+                    <img class="simg" src="img/search.png">
+                </fig>
+            </div>
+
+            <div class="loginbox">
+                <div class="lsbuttons">
+                    <button type="button" class="loginbutton">Login</button>
+                    <button type="button" class="signupbutton">Signup</button>
+                </div>
+            </div>   
+            
+        </div>
+        
+        
+    
+</body></html>
