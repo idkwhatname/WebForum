@@ -13,38 +13,45 @@
       
     <body>
         <div class="container">
-            <fig class="tooltip" style="width: fit-content; display:inline-block;">
-                <IMG STYLE="WIDTH:64; HEIGHT:64" SRC="cam.png">
-                </IMG>
-            <span class="tooltiptext">Upload</span>
-            </fig>
-
-            <div class="SearchBar">
-                <input  style="border: 2px solid #09b3ff;border-radius: 5px;width: 50%; padding: 5; display:inline-block;" type="text" placeholder="SEARCH">
+            <div class="topBar">
+               
+                <div class="icons">
+                    <fig class="tooltip" style="width: fit-content; display:inline-block;">
+                        <a href="http://google.com"><img class="home" src="img/home.png"></a> 
+                        <span class="tooltiptext">Home</span>
+                    </fig>
+                
+                    <fig class="tooltip" style="width: fit-content; display:inline-block;">
+                        <a href="http://google.com"><img class="profile" src="img/profile.jpg"></a> 
+                    <span class="tooltiptext">Profile</span>
+                    </fig>
+                
+                    <fig class="tooltip" style="width: fit-content; display:inline-block;">
+                        <a href="http://google.com"><img class="upload" src="img/upload.png"></a> 
+                        <span class="tooltiptext">Upload</span>
+                    </fig>
             </div>
 
-        <div class="Login">
-            <div>
-                <input type="text" placeholder="Login" style="margin: 3;">
+            <div class="searchbar">
+                <input type="text" class="sbar" placeholder="Search..">
+                <fig class="tooltip" style="width: fit-content; display:inline-block;">
+                    <img class="simg" src="img/search.png">
+                </fig>
             </div>
-            <div>
-                <input type="password" placeholder="Password" style="margin: 3";>
-            </div>
-            <div style="float: right;"> 
-                <button> Login </button>
-                <button> SignUp</button>
-            </div>  
+
+            <div class="loginbox">
+                <div class="lsbuttons">
+                    <button type="button" class="loginbutton">Login</button>
+                    <button type="button" class="signupbutton">Signup</button>
+                </div>
+            </div>   
             
         </div>
-            <img class="Banner" src="img/Banner.png">
+            
             <div class="BannerText">
                 <h1>
                         Web Forum
                 </h1>
-            </div>
-                <div class="TopBar">
-                    Popular Posts
-
             </div>
             
             

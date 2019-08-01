@@ -14,7 +14,7 @@
         }
         .BannerText{
             position: absolute;
-            top: 5%;
+            top: 4%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
@@ -29,14 +29,6 @@
             position: sticky;
             float: right; 
             border: 2px solid #000000;
-        }
-        .TopBar{
-            grid-column-start: 2;
-            grid-column-end: 5;
-            grid-row-start: row1-start;
-            grid-row-end: 3;
-            font-size: 30px;
-            text-align: center;
         }
         .ArticleSection{
             grid-row-start: 2;
@@ -95,4 +87,82 @@
         .tooltip:hover .tooltiptext{
             visibility: visible;
         }
+ 
+            .topBar{
+                border: 2px solid #09b3ff; 
+                width:100%;
+                display: inline-block;    
+                border-radius: 5px;
+            }
+            
+            .icons{
+                display: inline-block;
+            }
+            
+            .home{
+                width:5em; 
+                margin-top:0.5em;
+                margin-bottom: 0.5em;
+                margin-left: 0.5em;
+            }
+            
+            .profile{
+                width:5em;  
+                margin-top:0.5em;
+                margin-bottom: 0.5em;
+            }
+            
+            .upload{
+                width:5em; 
+                margin-top:0.5em;
+                margin-bottom: 0.5em;
+            }
+            
+            .searchbar{
+                display: inline-block; 
+                position: absolute;
+                left: 45%;
+                top: 7%;
+                height: 84px;
+                width: 200px;
+                padding: .25em;
+            }
+            
+            .sbar{
+                width: 200%;
+                height: 30px;
+                border: 2px solid #09b3ff;
+                border-radius: 5px;
+                margin-top: 30px;
+            }
+            
+            .simg{
+                width:20px;
+                position: relative;
+                right: -373px;
+                top:-25px;
+                transform: scale(1.2);
+            }
+            
+            .loginbox{
+                display: inline-block; 
+                float: right; 
+                border: 2px solid #09b3ff;
+                border-radius: 5px;
+                margin:0.5em;
+                width: 10em;
+                height: 80px;
+            }
+            
+            .lsbuttons{
+           
+            }
+            
+            .loginbutton{
+                
+            }
+            
+            .signupbutton{
+                
+            }
     
