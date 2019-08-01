@@ -12,17 +12,15 @@
       
     <body>
         <div class="container">
-
-
-        <fig class="tooltip" style="width: fit-content; display:inline-block;">
-            <IMG STYLE="WIDTH:64; HEIGHT:64" SRC="cam.png">
-            </IMG>
+            <fig class="tooltip" style="width: fit-content; display:inline-block;">
+                <IMG STYLE="WIDTH:64; HEIGHT:64" SRC="cam.png">
+                </IMG>
             <span class="tooltiptext">Upload</span>
-        </fig>
+            </fig>
 
-        <div class="SearchBar">
-            <input  style="border: 2px solid #09b3ff;border-radius: 5px;width: 50%; padding: 5; display:inline-block;" type="text" placeholder="SEARCH">
-        </div>
+            <div class="SearchBar">
+                <input  style="border: 2px solid #09b3ff;border-radius: 5px;width: 50%; padding: 5; display:inline-block;" type="text" placeholder="SEARCH">
+            </div>
 
         <div class="Login">
             <div>
@@ -57,21 +55,23 @@
     
     $res = $m->executeQuery("forum.articles", $query);
     
-    $r = current($res->toArray());
-    
-?>
-            
+    $r = $res->toArray();
+              
+?>        
             <div class="ArticleSection">
-                <!-- Probbaly need to loop through all articles -->
-                    <article class="Article">
-                        <img class="ArticlePeekImg" src="img/placeholder.jpg">
-                        <h4>
-                            <?php echo $r->title, "";?>
-                        </h4>
-                            <?php echo $r->description, "";?>
-                    </article>               
-                </div>
-            </div> 
+                <?php 
+                    foreach($r as $a){
+                        echo "<article class='Article'>
+                            <img class='ArticlePeekImg' src='img/placeholder.jpg'>
+                            <h4>
+                               $a->title
+                            </h4>
+                               $a->description
+                               <div
+                            </article>";
+                    }
+                ?>
+            </div>
+        </div> 
     </body>
-
-</html
+</html>
