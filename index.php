@@ -7,6 +7,24 @@
         <title>
             Forum
         </title>
+    
+    <?php
+    $m = new MongoDB\Driver\Manager("mongodb://localhost:27017");
+                
+    if(isset($_GET["query"])){
+            $query  = htmlentities($_GET['query']);
+            $filter = [ 'tags' => new MongoDB\BSON\Regex($query)];
+            $query = new MongoDB\Driver\Query($filter);
+
+            $res = $m->executeQuery("forum.articles", $query);
+
+            $r = $res->toArray(); 
+    }else{
+        $query = new MongoDB\Driver\Query([]);
+        
+        $r = $m->executeQuery("forum.articles", $query);
+    }      
+?>
 
         <body>
 
@@ -15,7 +33,7 @@
 
                     <div class="icons">
                         <fig class="tooltip" style="width: fit-content; display:inline-block;">
-                            <a href="http://google.com"><img class="home" src="img/home.png"></a>
+                            <a href="/webforum/index.php"><img class="home" src="img/home.png"></a>
                             <span class="tooltiptext">Home</span>
                         </fig>
 
@@ -30,12 +48,14 @@
                         </fig>
                     </div>
 
-                    <div class="searchbar">
-                        <input type="text" class="sbar" placeholder="Search..">
+                    <form action="<?php $_PHP_SELF ?>" method="get" class="searchbar">
+                        
+                        <input type="text" name="query" id="query" class="sbar" placeholder="Search..">
+                        
                         <fig class="tooltip" style="width: fit-content; display:inline-block;">
                             <img class="simg" src="img/search.png">
                         </fig>
-                    </div>
+                    </form>
 
                     <div class="loginbox">
                         <div class="lsbuttons">
@@ -53,19 +73,10 @@
                 </div>
 
 
-<?php
-    $m = new MongoDB\Driver\Manager("mongodb://localhost:27017");
-    
-    $filter = [ 'tags' => new MongoDB\BSON\Regex('pasta')]; 
-    $query = new MongoDB\Driver\Query($filter);     
-    
-    $res = $m->executeQuery("forum.articles", $query);
-    
-    $r = $res->toArray();          
-?>
+
                 <div class="ArticleSection">
                     <?php
-
+                    if(isset($r)){
                     foreach($r as $a){
                         $article = <<<HTML
                             <article class='Article'>
@@ -81,6 +92,8 @@
                         HTML;
                         echo $article;
                     }
+                    }
+
                 ?>
                 </div>
             </div>
