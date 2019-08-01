@@ -18,12 +18,20 @@
 
             $res = $m->executeQuery("forum.articles", $query);
 
-            $r = $res->toArray(); 
+            $r = $res->toArray();
     }else{
         $query = new MongoDB\Driver\Query([]);
         
         $r = $m->executeQuery("forum.articles", $query);
-    }      
+        $r = $r->toArray();
+    }     
+    if(isset($r)){
+        function compare($o1, $o2){
+            return $o1->likes < $o2->likes;
+        }
+
+        usort($r, 'compare');
+    }
 ?>
 
         <body>
@@ -93,7 +101,12 @@
                         echo $article;
                     }
                     }
-
+                    if(empty($r)){
+                        $error = <<<HTML
+                                <h4>Sorry, there are no posts regarding your search!</h4>
+                        HTML;
+                        echo $error;
+                    }
                 ?>
                 </div>
             </div>
