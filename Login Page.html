@@ -85,12 +85,12 @@ span.psw {
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <input type="text" id="username" placeholder="Enter Username" name="uname" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" id="password" placeholder="Enter Password" name="psw" required>
         
-    <button type="submit">Login</button>
+    <button type="submit" id="login">Login</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
@@ -103,4 +103,18 @@ span.psw {
 </form>
 
 </body>
+    
+    <script>
+        
+        var username = document.getElementById("username");
+        var password = document.getElementById("password");
+        
+        document.getElementById("login").addEventListener("click",function(){
+            if(username.value.length > 0 && password.value.length > 0){
+                var login_username = username.value; 
+                var login_password = password.value;
+            }
+        }
+    </script>
+    
 </html>

@@ -75,24 +75,24 @@ a {
     <hr>
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required style="border: 2px solid #09b3ff; 
+    <input id="email" type="text" placeholder="Enter Email" name="email" required style="border: 2px solid #09b3ff; 
                 border-radius: 5px;">
       
     <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="email" required style="border: 2px solid #09b3ff; 
+    <input id="username" type="text" placeholder="Enter Username" name="email" required style="border: 2px solid #09b3ff; 
                 border-radius: 5px;">
            
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required style="border: 2px solid #09b3ff; 
+    <input id="password" type="password" placeholder="Enter Password" name="psw" required style="border: 2px solid #09b3ff; 
                 border-radius: 5px;">
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required style="border: 2px solid #09b3ff; 
+    <input id="passwordRPT" type="password" placeholder="Repeat Password" name="psw-repeat" required style="border: 2px solid #09b3ff; 
                 border-radius: 5px;">
     <hr>
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 
-    <button type="submit" class="registerbtn">Register</button>
+    <button id="signup" type="submit" class="registerbtn">Register</button>
   </div>
   
   <div class="container signin">
@@ -100,5 +100,21 @@ a {
   </div>
 </form>
 
+    <script>
+        var email = document.getElementById("email");
+        var username = document.getElementById("username");
+        var password = document.getElementById("password");
+        var passwordRPT = document.getElementById("passwordRPT");
+        
+        document.getElementById("login").addEventListener("click",function(){
+            if(passwordRPT.value == password.value) {
+                if(username.value.length > 0 && password.value.length > 0 && email.value.length > 0){
+                    var signup_username = username.value; 
+                    var signup_password = password.value;
+                    var signup_email = email.value
+                }
+            }
+        }
+    </script>
 </body>
 </html>
